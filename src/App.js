@@ -5,6 +5,7 @@ import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NoteState from './context/notes/NoteState';
+import UserState from './context/notes/UserState';
 import Alert from './Components/Alert';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
@@ -23,6 +24,7 @@ function App() {
   return (
     <div>
       <NoteState>
+      <UserState>
         <Router>
           <Navbar showalert={showalert}/>
           <Alert alert={alert}/>
@@ -36,6 +38,7 @@ function App() {
             </Routes>
           </div>
         </Router>
+      </UserState>
       </NoteState>
     </div>
   );

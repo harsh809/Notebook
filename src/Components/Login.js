@@ -17,11 +17,11 @@ function Login(props) {
         if (json.success) {
             //saving auth-token and redirect
             localStorage.setItem('token', json.Authtoken);
-            props.showalert("Successfully Login","success");
+            props.showalert("Successfully Login", "success");
             navigate('/');
         }
         else {
-            props.showalert("Invalid Credentials","danger")
+            props.showalert("Invalid Credentials", "danger")
         }
     }
     const onchange = (e) => {

@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Link,useLocation,useNavigate  } from 'react-router-dom';
+import Avatar from '@mui/material/Avatar';
+import usercontext from '../context/notes/usercontext';
 
 const Navbar = (props) => {
     let location = useLocation();
     let navigate = useNavigate();
+    const context = useContext(usercontext);
+    const {user} = context;
     const handlelogout = ()=>{
         localStorage.removeItem('token');
         navigate("/login");
@@ -26,10 +30,15 @@ const Navbar = (props) => {
                                 <Link className={`nav-link ${location.pathname==="/about"?"active":""}`} to="/about">About</Link>
                             </li>
                         </ul>
-                        {!localStorage.getItem('token')?<form className="d-flex" role="search">
+                        {!localStorage.getItem('token')?<form className="d-flex">
                         <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
                         <Link className="btn btn-primary mx-1" to="/signup" role="button">Sign Up</Link>
-                        </form>:<button className="btn btn-primary" onClick={handlelogout} >Logout</button>}
+                        </form>:
+                        <div className='d-flex'>
+                            <button className="btn btn-primary" onClick={handlelogout} >Logout</button>
+                            <Avatar className='ms-2 bg-primary'>{user===null?"":user.name.charAt(0)}</Avatar>
+                        </div>
+                        }
                     </div>
                 </div>
             </nav>
