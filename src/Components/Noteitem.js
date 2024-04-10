@@ -15,14 +15,14 @@ function Noteitem(props) {
                 <div className="card-body">
                     <div className="d-flex align-items-center">
                         <h5 className="card-title mx-2 overflow-hidden">{note.title}</h5>
-                        <Tooltip title="Delete" onClick={() => { deletenote(note._id); props.showalert("Successfully Deleted", "success"); }}>
-                            <IconButton>
+                        <Tooltip title="Delete" >
+                            <IconButton onClick={() => { deletenote(note._id); props.showalert("Successfully Deleted", "success"); }}>
                                 <DeleteIcon />
                             </IconButton>
                         </Tooltip>
-                        <Tooltip title="Update" onClick={() => update(note)}>
-                            <IconButton>
-                                <DriveFileRenameOutlineIcon onClick={() => update(note)} />
+                        <Tooltip title="Update" >
+                            <IconButton onClick={() => update(note)}>
+                                <DriveFileRenameOutlineIcon  />
                             </IconButton>
                         </Tooltip>
                     </div>
