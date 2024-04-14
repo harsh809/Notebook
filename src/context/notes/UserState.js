@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 function UserState(props) {
-    const host = "http://notebook-server-fawn.vercel.app"
+    const host = "https://notebook-server-fawn.vercel.app"
     // const host = "http://localhost:5000"
     // get user details
     const getuser = async () => {
