@@ -2,8 +2,8 @@ import Notescontext from "./notescontext";
 import {useState} from "react";
 
 const NoteState = (props)=>{
-    // const host = "https://notebook-two-pi.vercel.app"
-    const host = "http://localhost:5000"
+    const host = "http://notebook-server-fawn.vercel.app"
+    // const host = "http://localhost:5000"
     //Getallnotes
     const getnotes = async ()=>{
       const response = await fetch(`${host}/api/notes/fetchallnotes`, {

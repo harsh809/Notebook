@@ -3,8 +3,8 @@ import { useState } from "react";
 
 
 function UserState(props) {
-    // const host = "https://notebook-two-pi.vercel.app"
-    const host = "http://localhost:5000"
+    const host = "http://notebook-server-fawn.vercel.app"
+    // const host = "http://localhost:5000"
     // get user details
     const getuser = async () => {
         const response = await fetch(`${host}/api/auth/getuser`, {
