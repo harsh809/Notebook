@@ -28,7 +28,7 @@ function App() {
         <Router>
           <Navbar showalert={showalert}/>
           <Alert alert={alert}/>
-          <div className="container">
+          {/* <div className="container"> */}
             <Routes>
               <Route exact path="/about" element={<About />} />
               <Route exact path="/login" element={<Login showalert={showalert}/>} />
@@ -36,7 +36,7 @@ function App() {
               <Route exact path="/" element={<Home showalert={showalert}/>}>
               </Route>
             </Routes>
-          </div>
+          {/* </div> */}
         </Router>
       </UserState>
       </NoteState>
