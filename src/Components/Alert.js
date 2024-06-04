@@ -1,4 +1,5 @@
 import React from 'react'
+import './CSS/Alert.css'
 
 export default function Alert(props) {
     const capitalize =(word)=>{

@@ -49,9 +49,9 @@
 .avatar-container .avatar {
     background-color: #007bff;
     color: #fff;
-    width: 36px; 
-    height: 36px; 
-    font-size: 1rem;
+    width: 45px; 
+    height: 45px; 
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {

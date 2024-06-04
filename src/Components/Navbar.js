@@ -45,7 +45,7 @@ const Navbar = (props) => {
                                 </ul>
                             </div> :
                             <div className="avatar-container">
-                                <button className="btn nav-btn" onClick={handleLogout}>Logout</button>
+                                <button className="btn nav-btn" onClick={handleLogout} style={{marginRight:"5px"}}>Logout</button>
                                 <Avatar className='avatar'>{user ? user.name.charAt(0) : ''}</Avatar>
                             </div>
                         }

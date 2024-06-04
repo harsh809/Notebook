@@ -1,0 +1,154 @@
+.notes-container {
+  margin: 20px;
+  padding: 20px;
+  /* background-color: #f9f9f9; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.note-heading {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.no-notes-message {
+  color: #888;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.notes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Modal Styles */
+.modal-content {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  border: none;
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+  padding: 16px;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: none;
+  flex-wrap: wrap;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+textarea.form-control {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Button Styles */
+.btn-update {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 10px;
+}
+
+.btn-update:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-right: 10px; 
+  margin-top: 10px; 
+}
+
+.btn-close:hover {
+  background-color: rgba(108, 117, 125, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+  .notes-container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .btn-update, .btn-close {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .modal-footer {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-close {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}

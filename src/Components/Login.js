@@ -32,7 +32,7 @@ function Login(props) {
 
     return (
         <div className='login' >
-            <h2>Login to continue with Notebook</h2>
+            <h2 className='login-heading'>Login to continue with Notebook</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>

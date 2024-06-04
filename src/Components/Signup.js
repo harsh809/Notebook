@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './CSS/Signup.css'; 
+import './CSS/Signup.css';
 
 function Signup(props) {
   const [credentials, setcredentials] = useState({ name: "", email: "", password: "" });
@@ -30,18 +30,18 @@ function Signup(props) {
   }
   return (
     <div className='signup'>
-      <h2>Create an account to use Notebook</h2>
+      <h2 className='signup-heading'>Create an account to use Notebook</h2>
       <form onSubmit={handlesubmit} className='signup-form'>
-        <div className="mb-3">
+        <div >
           <label htmlFor="name" className="form-label">Name</label>
           <input type="text" className="form-control" id="name" name="name" aria-describedby="name" onChange={onchange} minLength={3} required />
         </div>
-        <div className="mb-3">
+        <div >
           <label htmlFor="email" className="form-label">Email address</label>
           <input type="email" className="form-control" id="email" name="email" aria-describedby="emailHelp" onChange={onchange} required />
           <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
         </div>
-        <div className="mb-3">
+        <div >
           <label htmlFor="password" className="form-label">Password</label>
           <input type="password" className="form-control" id="password" name='password' onChange={onchange} minLength={5} required />
         </div>
