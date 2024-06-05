@@ -8,23 +8,29 @@ function Login(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`https://notebook-server-git-main-harsh3711750gmailcoms-projects.vercel.app/api/auth/login`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email: credentials.email, password: credentials.password }),
-        });
-        const json = await response.json();
-        if (json.success) {
-            // Saving auth-token and redirect
-            localStorage.setItem('token', json.Authtoken);
-            props.showalert("Successfully Login", "success");
-            navigate('/');
-        } else {
-            props.showalert("Invalid Credentials", "danger");
+        try {
+            const response = await fetch(`https://notebook-server-git-main-harsh3711750gmailcoms-projects.vercel.app/api/auth/login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email: credentials.email, password: credentials.password }),
+            });
+            const json = await response.json();
+            if (json.success) {
+                // Saving auth-token and redirect
+                localStorage.setItem('token', json.Authtoken);
+                props.showalert("Successfully Login", "success");
+                navigate('/');
+            } else {
+                props.showalert("Invalid Credentials", "danger");
+            }
+        } catch (error) {
+            console.error("Error during login:", error);
+            props.showalert("Something went wrong. Please try again.", "danger");
         }
     };
+
 
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });

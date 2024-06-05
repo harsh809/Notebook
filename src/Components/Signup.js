@@ -7,24 +7,29 @@ function Signup(props) {
   const navigate = useNavigate();
   const handlesubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`https://notebook-server-git-main-harsh3711750gmailcoms-projects.vercel.app/api/auth/createuser`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password }),
-    });
-    const json = await response.json();
-    if (json.success) {
-      //saving auth-token and redirect
-      localStorage.setItem('token', json.Authtoken);
-      navigate('/');
-      props.showalert("Account Created Successfully", "success");
+    try {
+      const response = await fetch(`https://notebook-server-git-main-harsh3711750gmailcoms-projects.vercel.app/api/auth/createuser`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password }),
+      });
+      const json = await response.json();
+      if (json.success) {
+        // Saving auth-token and redirect
+        localStorage.setItem('token', json.Authtoken);
+        navigate('/');
+        props.showalert("Account Created Successfully", "success");
+      } else {
+        props.showalert("Invalid Details", "danger");
+      }
+    } catch (error) {
+      console.error("Error during account creation:", error);
+      props.showalert("Something went wrong. Please try again.", "danger");
     }
-    else {
-      props.showalert("Invalid Details", "danger");
-    }
-  }
+  };
+
   const onchange = (e) => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value })
   }
