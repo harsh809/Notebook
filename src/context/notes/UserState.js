@@ -2,7 +2,7 @@ import Usercontext from "./usercontext";
 import { useState } from "react";
 
 function UserState(props) {
-    const host = "https://notebook-server-git-main-harsh3711750gmailcoms-projects.vercel.app"
+    const host = "https://notebook-server-kappa.vercel.app"
     // const host = "http://localhost:5000"
 
     // Get user details

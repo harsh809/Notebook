@@ -8,7 +8,7 @@ function Signup(props) {
   const handlesubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://notebook-server-git-main-harsh3711750gmailcoms-projects.vercel.app/api/auth/createuser`, {
+      const response = await fetch(`https://notebook-server-kappa.vercel.app/api/auth/createuser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

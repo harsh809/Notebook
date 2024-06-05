@@ -9,7 +9,7 @@ function Login(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`https://notebook-server-git-main-harsh3711750gmailcoms-projects.vercel.app/api/auth/login`, {
+            const response = await fetch(`https://notebook-server-kappa.vercel.app/api/auth/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
